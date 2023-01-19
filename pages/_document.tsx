@@ -10,7 +10,7 @@ class MyDocument extends Document {
             name="description"
             content="Generate your next Twitter bio in seconds."
           />
-          <meta property="og:site_name" content="twitterbio.com" />
+          <meta property="og:site_name" content="Twitter Bio" />
           <meta
             property="og:description"
             content="Generate your next Twitter bio in seconds."
