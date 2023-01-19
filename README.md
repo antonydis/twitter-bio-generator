@@ -9,7 +9,15 @@ This project uses AI to generate Twitter bios for you.
 
 This project uses the [OpenAI GPT-3 API](https://openai.com/api/) (specifically, text-davinci-003) and [Vercel Edge functions](https://vercel.com/features/edge-functions) with streaming. It constructs a prompt based on the form and user input, sends it to the GPT-3 API via a Vercel Edge function, then streams the response back to the application. 
 
-It was originally made by [@nutlope](https://nutlope.substack.com/).
+The code is a Next.js application that allows users to generate Twitter bios. It makes use of several libraries and components, including "framer-motion", "next", "react", and custom components such as "DropDown", "Footer", "GitHub", "Header", "LoadingDots", and "ResizablePanel".
+
+It imports the necessary libraries and components at the top, and then defines a NextPage component called "Home". Within the component, it uses the useState hook to manage the state of the application, including a loading state, the user-entered bio text, the selected vibe ("Professional", "Casual", or "Funny"), and the generated bios.
+
+The component has a form with a textarea for the user to enter their bio and a dropdown to select the vibe. When the form is submitted, the generateBio function is called, which sends a request to an API route /api/generate passing the prompt as a body. The prompt is a string that varies based on the selected vibe, and it's used to guide the generation of the bios.
+
+The server-side function that handles the /api/generate route will use the prompt to generate the bios and sends the response back to the client. The client-side function generateBio receives the response and reads the data using a ReadableStream and TextDecoder to parse the bios and updating the state with the generated bios.
+
+The component also includes a Toaster and a toast for displaying error messages, and a LoadingDots component for displaying a loading spinner while the bios are being generated. The component is rendered as a flex container with a maximum width of 5xl, centered horizontally and vertically on the screen. The Head component is used to set the title of the page.
 
 ## Running Locally
 
